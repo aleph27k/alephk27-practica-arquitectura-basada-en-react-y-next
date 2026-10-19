@@ -13,6 +13,9 @@
  
    body {
      margin: 0;
+     min-height: 100vh;
+     display: flex;
+     flex-direction: column;
      background: var(--background);
      color: var(--text);
      font-family: var(--font-geist-sans), sans-serif;
@@ -31,15 +34,22 @@
    }
  
    .page {
-     width: 1000px;
+     width: min(1000px, calc(100% - 48px));
      margin: 0 auto;
+     flex: 1;
    }
  
    .navbar {
+     position: sticky;
+     top: 0;
+     z-index: 1;
+     width: min(1000px, calc(100% - 48px));
      height: 82px;
      display: flex;
      align-items: center;
      justify-content: space-between;
+     margin: 0 auto;
+     background: var(--background);
      border-bottom: 1px solid var(--border);
    }
  
@@ -173,10 +183,12 @@
    }
  
    .footer {
+     width: min(1000px, calc(100% - 48px));
      min-height: 80px;
      display: flex;
      align-items: center;
      justify-content: space-between;
+     margin: 0 auto;
    }
  
    .footer p {
@@ -198,7 +210,7 @@
 }
 
 .project-detail {
-  width: 760px;
+  width: min(760px, 100%);
 }
 
 .project-detail__back {
